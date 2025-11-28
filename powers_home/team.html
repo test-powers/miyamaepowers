@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宮前パワーズ｜少年野球チーム</title>
+<style>
+:root {
+  --main-color: #4B2E83;
+  --light-color: #E8D9FF;
+  --text-color: #333;
+}
+
+body {
+  margin: 0;
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  color: var(--text-color);
+}
+
+/* ===== Header ===== */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: var(--main-color);
+  height: 80px;
+  box-sizing: border-box;
+}
+
+header .logo-button img {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  flex: 1;
+  pointer-events: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* ===== Nav ===== */
+nav {
+  background-color: var(--light-color);
+  text-align: center;
+  padding: 0.7em 0;
+}
+
+nav a {
+  color: var(--main-color);
+  margin: 0 1em;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Sections ===== */
+section {
+  max-width: 900px;
+  margin: 0.4em auto;
+  padding: 0 1em;
+}
+
+h2 {
+  color: var(--main-color);
+  border-left: 6px solid var(--main-color);
+  padding-left: 0.5em;
+}
+
+.catch {
+  background-color: var(--light-color);
+  padding: 0.4em;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-top: 0.4em;
+}
+
+img {
+  width: 100%;
+  border-radius: 10px;
+  margin: 1em 0;
+}
+
+.main-photo {
+  border-radius: 12px;
+  margin: 0.5em 0 0.5em 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.recruit {
+  background-color: #f8f4ff;
+  padding: 0.5em;
+  border-radius: 12px;
+  margin-top: 2em;
+  text-align: center;
+  border: 2px solid var(--main-color);
+}
+
+.recruit .icon {
+  font-size: 2.2rem;
+}
+
+.recruit p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0.5em 0 0 0;
+}
+
+footer {
+  background-color: var(--main-color);
+  color: white;
+  text-align: center;
+  padding: 1em;
+  margin-top: 3em;
+  font-size: 0.9em;
+}
+
+#main_team h2 {
+  font-size: 1.8rem;
+}
+
+#main_team p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+  .recruit-title {
+  font-size: 2.0rem; /* 大きさを自由に調整 */
+  }
+
+  .recruit-text {
+  font-size: 1.5rem; /* 好きなサイズに調整 */
+  }
+  
+/* アイコン画像 */
+.icon-img {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+/* ===== 体験・見学ガイド ===== */
+.contact-guide {
+  text-align: center;
+  margin-top: 1.5em;
+}
+
+.contact-guide .guide-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.6em;
+}
+
+.mail-button {
+  display: inline-block;
+  background-color: var(--main-color);
+  color: white;
+  padding: 0.6em 1.4em;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+/* ===== Instagramガイド ===== */
+.instagram-guide {
+  text-align: center;
+  margin-top: 2em;
+}
+
+.insta-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.6em 1.4em;
+  border: 2px solid var(--main-color); /* ← 紫枠線 */
+  border-radius: 30px; /* ← mail-button と同じ丸さ */
+  text-decoration: none;
+  color: var(--main-color);
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2); /* ← 同じ影を付ける場合 */
+}
+
+.insta-icon:hover {
+  background-color: var(--light-color);
+}
+.insta-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+/* ===== !!!!!!!!!!!!team用!!!!!!!!!!!! ===== */
+.catch img {
+  height: 90px;  /* お好みの大きさに調整 */
+  width: auto;
+  display: block;
+  margin: 0 auto; /* 中央寄せ */
+}
+
+/* ===== Mobile (600px以下) ===== */
+@media (max-width: 600px) {
+  .hamburger {
+    display: block;
+  }
+
+  header .logo-button img {
+    height: 35px;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  body {
+    padding-top: 80px;
+  }
+
+  /* ハンバーガー押下時のボックス */
+  #menu {
+    display: none; /* 初期非表示 */
+    position: fixed;
+    top: 80px; /* ヘッダー下 */
+    right: 20px;
+    width: 180px;
+    background-color: var(--light-color);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    flex-direction: column;
+    text-align: left;
+    z-index: 2000;
+  }
+
+  #menu a {
+    display: block;
+    padding: 0.7em 1em;
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  #menu a:last-child {
+    border-bottom: none;
+  }
+  
+  .catch {
+    padding: 0.1em 0.3em; /* 上下を狭く、左右はそのまま */
+    margin-top: 0.5em;    /* 上の余白も少し狭く */
+    font-size: 1.1rem; 
+  }
+  
+  #team h2 {
+    font-size: 1rem; /* 見出しを小さく */
+  }
+
+  #team p {
+    font-size: 0.8rem; /* 本文も少し小さく */
+    line-height: 1.4;   /* 行間も調整 */
+  }
+
+  #team {
+    padding: 0 0.5em;  /* 横余白を少し小さく */
+  }
+  
+  .recruit-title {
+  font-size: 1.4rem; /* 大きさを自由に調整 */
+  }
+
+  .recruit-text {
+  font-size: 0.9rem; /* 好きなサイズに調整 */
+  }
+  
+  .contact-guide .guide-text {
+    font-size: 1.1rem;
+  }
+
+  .mail-button {
+    font-size: 1rem;
+    padding: 0.5em 1.2em;
+  }
+
+  .icon-img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .insta-text {
+    font-size: 0.9rem;
+  }
+/* ===== !!!!!!!!!!!!team用!!!!!!!!!!!! ===== */
+    #access iframe {
+    width: 100%;   /* 横幅を画面幅いっぱいに */
+    height: 250px; /* 高さを小さく */
+  }
+
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo-button">
+    <img src="images/powers_logo.jpg" alt="宮前パワーズ ロゴ">
+  </a>
+  <h1>宮前パワーズ</h1>
+  <button class="hamburger" onclick="toggleMenu()">☰</button>
+</header>
+
+<nav id="menu">
+  <a href="index.html">ホーム</a> 
+  <a href="team.html">チーム紹介</a>
+  <a href="schedule.html">スケジュール</a>
+  <a href="join.html">体験・入部案内</a>
+  <a href="contact.html">お問い合わせ</a>
+</nav>
+
+<!-- ===== チームロゴ ===== -->
+<section class="catch">
+  <img src="images/powers_logo.jpg" alt="宮前パワーズ ロゴ">
+</section>
+
+<!-- ===== チーム紹介 ===== -->
+<section id="team">
+  <h2>■チーム紹介</h2>
+  <p>
+    ・１９８４年（昭和５９年）に設立した、横浜市港北区少年野球連盟に所属する軟式少年野球チームです。<br><br>
+    ・野球を楽しむ！いつも全力で！しっかりと挨拶！をモットーに活動してます。<br><br>
+    ・野球の基礎に加え、礼儀とマナーを大切にできる選手になるよう指導しております。それぞれの技能に応じた練習を行いますので、初心者でもご安心です。<br><br>
+    ・箕輪小・矢上小・日吉台小・日吉南小・綱島東小・日吉小（川崎市幸区北加瀬）に通う児童で構成されています。（選手人数：６年 １１名、４年１人、３年 ６人、２年 ３人の計２１名　※２０２５年１１月現在）<br><br><br>
+    【練習日時】　土曜・日曜・祝日　１３：００～１７：００（時期により変動）<br><br>
+    【練習場所】　矢上小学校、箕輪小学校、樽町公園グラウンド
+  </p>
+  <img src="images/team_photo1.jpg" alt="チーム写真1">
+  <img src="images/team_photo2.jpg" alt="チーム写真2">
+  <img src="images/team_photo3.jpg" alt="チーム写真3">
+</section>
+<br><br>
+<!-- ===== 戦歴 ===== -->
+<section id="history">
+  <h2>戦歴</h2>
+  <img src="images/history_photo.jpg" alt="戦歴写真">
+  <ul>
+    <li>2020年港北区秋季大会準優勝</li>
+    <li>2019年港北区秋季大会第3位</li>
+    <li>2018年港北区ジュニア大会第3位</li>
+  </ul>
+</section>
+<br><br>
+<!-- ===== アクセス ===== -->
+<section id="access">
+  <h2>アクセス</h2>
+
+  <!-- 矢上小学校 -->
+  <h3>矢上小学校</h3>
+  <p>
+    横浜市港北区日吉3‑23‑1<br>
+    日吉駅から自転車で約6分<br>
+    土日祝の13:00から宮前パワーズが練習するホームグラウンドです！
+  </p>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3245.979974054459!2d139.65496677558573!3d35.554196772628465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185f99725af7f7%3A0x43dc50e021d87e23!2z5qiq5rWc5biC56uL55-i5LiK5bCP5a2m5qCh!5e0!3m2!1sja!2sjp!4v1764318811460!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <!-- 箕輪小学校 -->
+  <h3>箕輪小学校</h3>
+  <p>
+    横浜市港北区箕輪町2‑7‑1<br>
+    日吉駅・綱島駅からそれぞれ自転車で約5分<br>
+    毎月練習で使用し、宮前パワーズの選手の多くが通っている小学校です！
+  </p>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3246.3627694223214!2d139.64273687558548!3d35.54474187263166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185f0b5f12aae1%3A0x9f46c30823253f45!2z5qiq5rWc5biC56uL566V6Lyq5bCP5a2m5qCh!5e0!3m2!1sja!2sjp!4v1764318855254!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+  <!-- 鶴見川樽町公園 -->
+  <h3>鶴見川 樽町公園</h3>
+  <p>
+    横浜市港北区樽町2‑753<br>
+    綱島駅から自転車で約5分<br>
+    毎月練習を行い、試合でもよく使用する河川敷のグラウンドです！
+  </p>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3246.8122788299725!2d139.63552787558484!3d35.53363637263529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185f107eb87583%3A0xf70371552cce6abc!2z6ba06KaL5bed5qi955S65YWs5ZyS!5e0!3m2!1sja!2sjp!4v1764318878844!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>
+<footer>
+  &copy; Miyamae Powers
+</footer>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("menu");
+  if (menu.style.display === "block") {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "block";
+  }
+}
+</script>
+
+</body>
+</html>
