@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宮前パワーズ｜少年野球チーム</title>
+<style>
+:root {
+  --main-color: #4B2E83;
+  --light-color: #E8D9FF;
+  --text-color: #333;
+}
+
+body {
+  margin: 0;
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  color: var(--text-color);
+}
+
+/* ===== Header ===== */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: var(--main-color);
+  height: 80px;
+  box-sizing: border-box;
+}
+
+header .logo-button img {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  flex: 1;
+  pointer-events: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* ===== Nav ===== */
+nav {
+  background-color: var(--light-color);
+  text-align: center;
+  padding: 0.7em 0;
+}
+
+nav a {
+  color: var(--main-color);
+  margin: 0 1em;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Sections ===== */
+section {
+  max-width: 900px;
+  margin: 0.4em auto;
+  padding: 0 1em;
+}
+
+h2 {
+  color: var(--main-color);
+  border-left: 6px solid var(--main-color);
+  padding-left: 0.5em;
+}
+
+.catch {
+  background-color: var(--light-color);
+  padding: 0.4em;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-top: 0.4em;
+}
+
+img {
+  width: 100%;
+  border-radius: 10px;
+  margin: 1em 0;
+}
+
+.main-photo {
+  border-radius: 12px;
+  margin: 0.5em 0 0.5em 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.recruit {
+  background-color: #f8f4ff;
+  padding: 0.5em;
+  border-radius: 12px;
+  margin-top: 2em;
+  text-align: center;
+  border: 2px solid var(--main-color);
+}
+
+.recruit .icon {
+  font-size: 2.2rem;
+}
+
+.recruit p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0.5em 0 0 0;
+}
+
+footer {
+  background-color: var(--main-color);
+  color: white;
+  text-align: center;
+  padding: 1em;
+  margin-top: 3em;
+  font-size: 0.9em;
+}
+
+#team h2 {
+  font-size: 1.8rem;
+}
+
+#team p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+  .recruit-title {
+  font-size: 2.0rem; /* 大きさを自由に調整 */
+  }
+
+  .recruit-text {
+  font-size: 1.5rem; /* 好きなサイズに調整 */
+  }
+  
+/* アイコン画像 */
+.icon-img {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+/* ===== 体験・見学ガイド ===== */
+.contact-guide {
+  text-align: center;
+  margin-top: 1.5em;
+}
+
+.contact-guide .guide-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.6em;
+}
+
+.mail-button {
+  display: inline-block;
+  background-color: var(--main-color);
+  color: white;
+  padding: 0.6em 1.4em;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+/* ===== Instagramガイド ===== */
+.instagram-guide {
+  text-align: center;
+  margin-top: 2em;
+}
+
+.insta-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.6em 1.4em;
+  border: 2px solid var(--main-color); /* ← 紫枠線 */
+  border-radius: 30px; /* ← mail-button と同じ丸さ */
+  text-decoration: none;
+  color: var(--main-color);
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2); /* ← 同じ影を付ける場合 */
+}
+
+.insta-icon:hover {
+  background-color: var(--light-color);
+}
+.insta-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* ===== Mobile (600px以下) ===== */
+@media (max-width: 600px) {
+  .hamburger {
+    display: block;
+  }
+
+  header .logo-button img {
+    height: 35px;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  body {
+    padding-top: 80px;
+  }
+
+  /* ハンバーガー押下時のボックス */
+  #menu {
+    display: none; /* 初期非表示 */
+    position: fixed;
+    top: 80px; /* ヘッダー下 */
+    right: 20px;
+    width: 180px;
+    background-color: var(--light-color);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    flex-direction: column;
+    text-align: left;
+    z-index: 2000;
+  }
+
+  #menu a {
+    display: block;
+    padding: 0.7em 1em;
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  #menu a:last-child {
+    border-bottom: none;
+  }
+  
+  .catch {
+    padding: 0.1em 0.3em; /* 上下を狭く、左右はそのまま */
+    margin-top: 0.5em;    /* 上の余白も少し狭く */
+    font-size: 1.1rem; 
+  }
+  
+  #main_team h2 {
+    font-size: 1rem; /* 見出しを小さく */
+  }
+
+  #main_team p {
+    font-size: 0.8rem; /* 本文も少し小さく */
+    line-height: 1.4;   /* 行間も調整 */
+  }
+
+  #main_team {
+    padding: 0 0.5em;  /* 横余白を少し小さく */
+  }
+  
+  .recruit-title {
+  font-size: 1.4rem; /* 大きさを自由に調整 */
+  }
+
+  .recruit-text {
+  font-size: 0.9rem; /* 好きなサイズに調整 */
+  }
+  
+  .contact-guide .guide-text {
+    font-size: 1.1rem;
+  }
+
+  .mail-button {
+    font-size: 1rem;
+    padding: 0.5em 1.2em;
+  }
+
+  .icon-img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .insta-text {
+    font-size: 0.9rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo-button">
+    <img src="images/powers_logo.jpg" alt="宮前パワーズ ロゴ">
+  </a>
+  <h1>宮前パワーズ</h1>
+  <button class="hamburger" onclick="toggleMenu()">☰</button>
+</header>
+
+<nav id="menu">
+  <a href="index.html">ホーム</a> 
+  <a href="team.html">チーム紹介</a>
+  <a href="schedule.html">スケジュール</a>
+  <a href="join.html">体験・入部案内</a>
+  <a href="contact.html">お問い合わせ</a>
+</nav>
+
+<section class="catch">
+  仲間と一緒に、楽しく野球しよう！
+</section>
+
+<section>
+  <img src="images/main_photo.jpg" alt="チームメイン写真" class="main-photo">
+</section>
+
+<section id="main_team">
+  <h2>宮前パワーズは</h2>
+  <p>
+    横浜市港北区の軟式少年野球チームです。<br>
+    日吉駅・綱島駅付近を拠点に、箕輪小・矢上小・日吉台小・日吉南小・綱島東小・日吉小（川崎市幸区北加瀬）の男子・女子児童が所属。練習は矢上小・箕輪小・樽町公園グラウンドをメインに行っています。<br><br>
+    野球を楽しむ！いつも全力で！しっかりと挨拶！をモットーに活動しています。<br><br>
+    子供たちの勝ちたい気持ちに寄り添いつつ、野球を通じて子供たちの心身の健全な成長のサポートを目的とし、選手の保護者およびOBのボランティア精神に基づいて協力運営されています。<br>
+  </p>
+</section>
+
+<section class="recruit">
+  <div class="icon">⚾</div>
+  <p><strong class="recruit-title">選手募集中！</strong><br>
+     <span class="recruit-text">随時体験練習が可能！<br>
+    少しでも興味があればお気軽にお問い合わせください。</span>
+  </p>
+</section>
+
+<!-- === 体験・見学案内（メール） === -->
+<section class="contact-guide">
+  <p class="guide-text">体験・見学希望者はこちら！</p>
+  <div style="text-align:center; margin-top:1em;">
+  <span id="email-text" style="color:#4B2E83; font-weight:bold;">miyamaepowershp@gmail.com</span>
+  <button onclick="copyEmail()" style="margin-left:0.5em; padding:0.3em 0.6em; border-radius:6px; border:none; background-color:#4B2E83; color:white; cursor:pointer;">
+    コピー
+  </button>
+  </div>
+  <br>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSe2fMRng_hWDOEtv3ufmKRWM_6kswTYg_HNg2ARaPLOqxVVig/viewform" class="mail-button">
+    <img src="images/mail_icon.jpg" alt="メールアイコン" class="icon-img">
+    お問い合わせフォーム
+  </a>
+
+</section>
+
+<!-- === Instagram案内 === -->
+<section class="instagram-guide">
+
+  <a href="https://www.instagram.com/miyamaepowers/?hl=ja" target="_blank" class="insta-icon">
+    <img src="images/instagram_icon.jpg" alt="Instagram" class="icon-img">
+    インスタグラム
+  </a>
+
+  <p class="insta-text">
+    活動報告・スケジュールをタイムリーに<br>
+    インスタグラムで発信しています。<br>
+    ぜひお気軽にフォロー＆DMください！！
+  </p>
+</section>
+
+<footer>
+  &copy; Miyamae Powers
+</footer>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("menu");
+  if (menu.style.display === "block") {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "block";
+  }
+}
+
+function copyEmail() {
+  const email = document.getElementById("email-text").textContent;
+  navigator.clipboard.writeText(email).then(() => {
+    alert("メールアドレスをコピーしました: " + email);
+  }).catch(err => {
+    alert("コピーに失敗しました");
+  });
+}
+</script>
+
+</body>
+</html>
